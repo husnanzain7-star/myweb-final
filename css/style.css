@@ -276,6 +276,11 @@ footer {
   padding-top: 10px;
 }
 
+#about img {
+  width: 100%;
+  max-width: 500px;
+  image-rendering: pixelated;
+}
 
 /* feature section */
 #feature {
