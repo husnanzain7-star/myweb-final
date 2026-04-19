@@ -8,7 +8,7 @@ http://www.templatemo.com/tm-490-comila
 
 body
 	{
-		background: #696969;
+		background: #ADADAD;
    font-family: 'Rajdhani', sans-serif;
     font-weight: 400;
 	}
@@ -255,7 +255,7 @@ footer {
 }
 
 #home .btn:hover {
-  background: #696969;
+  background: #ADADAD;
   color: #ffffff;
   border-color: transparent;
 }
