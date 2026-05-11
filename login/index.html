@@ -12,11 +12,16 @@
         <div class="form sign-in">
             <h2>Selamat datang</h2>
 			<form id="loginForm">
-            <label>
-                <span>username</span>
-                <input type="email" />
-            </label>
-            <label>
+				/* agan */
+            <form class="login-form" id="loginForm" novalidate>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="username" name="username" required autocomplete="username">
+                        <label for="text">Username</label>
+                    </div>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+				/* agan */
                 <span>password</span>
                 <input type="password" />
             </label>
