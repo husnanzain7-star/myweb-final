@@ -24,8 +24,9 @@ document.getElementById("registerForm")
                     "application/x-www-form-urlencoded"
                 },
 
-        body:
-            `action=register&email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`            }
+                body:
+                `action=register&email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+            }
         );
 
         const result = await response.json();
