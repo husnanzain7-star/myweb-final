@@ -36,7 +36,7 @@ document.getElementById("registerForm")
 
         alertBox.style.display = "block";
 
-        if(result.success){
+        if(result.status === "success"){
 
             alertBox.style.color = "lime";
             alertBox.innerText =
