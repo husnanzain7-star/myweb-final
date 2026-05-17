@@ -1,38 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Register</title>
-
-    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="arcade.png">
+    <title>Devtro</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
+
 <body>
 
-<br><br>
+<br>
+<br>
 
 <div class="cont">
 
-    <!-- SIGN IN -->
+    <!-- LOGIN -->
     <div class="form sign-in">
 
-        <h2>Welcome</h2>
+        <h2>Selamat datang</h2>
 
-        <form id="loginForm">
+        <form class="login-form" id="loginForm" novalidate>
 
-            <label>
-                <span>Username</span>
-                <input type="text"
-                       id="username"
-                       required>
-            </label>
+            <label for="username">Username</label>
 
-            <label>
-                <span>Password</span>
-                <input type="password"
-                       id="password"
-                       required>
-            </label>
+            <div class="form-group">
+                <div class="input-wrapper">
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        required
+                        autocomplete="username">
+
+                </div>
+
+                <span class="error-message"
+                      id="emailError"></span>
+            </div>
+
+            <label for="password">Password</label>
+
+            <div class="form-group">
+
+                <div class="input-wrapper password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                        autocomplete="current-password">
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        id="passwordToggle"
+                        aria-label="Toggle password visibility">
+
+                        <span class="eye-icon"></span>
+
+                    </button>
+
+                </div>
+
+                <span class="error-message"
+                      id="passwordError"></span>
+
+            </div>
 
             <p class="forgot-pass">
                 Forgot password?
@@ -42,25 +76,26 @@
                 Sign In
             </button>
 
-        </form>
+            <div id="alertBox"
+                 class="alert"
+                 style="display:none;">
+            </div>
 
-        <div id="alertBox"></div>
+        </form>
 
     </div>
 
-    <!-- SIGN UP -->
+    <!-- REGISTER -->
     <div class="sub-cont">
 
         <div class="img">
 
             <div class="img__text m--up">
-                <h2>New here?</h2>
-                <p>Sign up and discover</p>
+                <h3>Don't have an account? Please Sign up!</h3>
             </div>
 
             <div class="img__text m--in">
-                <h2>Already have account?</h2>
-                <p>Sign in here</p>
+                <h3>If you already have an account, just sign in.</h3>
             </div>
 
             <div class="img__btn">
@@ -72,38 +107,50 @@
 
         <div class="form sign-up">
 
-            <h2>Create Account</h2>
+            <h2>Buat Akunmu</h2>
 
             <form id="registerForm">
 
                 <label>
-                    <span>Username</span>
-                    <input type="text"
-                           id="regUsername"
-                           required>
+                    <span>Nama</span>
+
+                    <input
+                        type="text"
+                        id="regNama"
+                        name="nama"
+                        required>
                 </label>
 
                 <label>
-                    <span>Email</span>
-                    <input type="email"
-                           id="regEmail"
-                           required>
+                    <span>Username</span>
+
+                    <input
+                        type="text"
+                        id="regUsername"
+                        name="username"
+                        required>
                 </label>
 
                 <label>
                     <span>Password</span>
-                    <input type="password"
-                           id="regPassword"
-                           required>
+
+                    <input
+                        type="password"
+                        id="regPassword"
+                        name="password"
+                        required>
                 </label>
 
                 <button type="submit" class="submit">
                     Sign Up
                 </button>
 
-            </form>
+                <div id="registerAlert"
+                     class="alert"
+                     style="display:none;">
+                </div>
 
-            <div id="registerAlert"></div>
+            </form>
 
         </div>
 
@@ -112,7 +159,6 @@
 </div>
 
 <script>
-
 document.querySelector('.img__btn')
 .addEventListener('click', function () {
 
@@ -120,11 +166,11 @@ document.querySelector('.img__btn')
     .classList.toggle('s--signup');
 
 });
-
 </script>
 
-<script src="login.js"></script>
-<script src="register.js"></script>
+<script src="script.js"></script>
+<script src="js/login.js"></script>
+<script src="js/register.js"></script>
 
 </body>
 </html>
