@@ -3,8 +3,8 @@ document.getElementById("registerForm")
 
     e.preventDefault();
 
-    const nama =
-        document.getElementById("regNama").value.trim();
+    const email =
+        document.getElementById("regEmail").value.trim();
 
     const username =
         document.getElementById("regUsername").value.trim();
@@ -24,12 +24,13 @@ document.getElementById("registerForm")
                     "application/x-www-form-urlencoded"
                 },
 
-                body:
-                `action=register&nama=${encodeURIComponent(nama)}&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
-            }
+        body:
+            `action=register&email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`            }
         );
 
         const result = await response.json();
+
+        console.log(result);
 
         const alertBox =
             document.getElementById("registerAlert");
