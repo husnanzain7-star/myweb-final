@@ -1,82 +1,127 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Register</title>
+    <title>Login Register</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 
-<div class="container">
+<br><br>
+
+<div class="cont">
 
     <!-- SIGN IN -->
     <div class="form sign-in">
-        <h2>Welcome Back</h2>
+
+        <h2>Welcome</h2>
 
         <form id="loginForm">
 
             <label>
                 <span>Username</span>
-                <input type="text" id="username" required>
-            </label>
-
-            <label>
-                <span>Password</span>
-                <input type="password" id="password" required>
-            </label>
-
-            <button type="submit" class="submit">
-                Sign In
-            </button>
-
-            <div id="alertBox"
-                 style="display:none;margin-top:10px;">
-            </div>
-
-        </form>
-    </div>
-
-    <!-- SIGN UP -->
-    <div class="form sign-up">
-        <h2>Create Account</h2>
-
-        <form id="registerForm">
-
-            <label>
-                <span>Username</span>
                 <input type="text"
-                       id="regUsername"
-                       required>
-            </label>
-
-            <label>
-                <span>Email</span>
-                <input type="email"
-                       id="regEmail"
+                       id="username"
                        required>
             </label>
 
             <label>
                 <span>Password</span>
                 <input type="password"
-                       id="regPassword"
+                       id="password"
                        required>
             </label>
 
+            <p class="forgot-pass">
+                Forgot password?
+            </p>
+
             <button type="submit" class="submit">
-                Sign Up
+                Sign In
             </button>
 
-            <div id="registerAlert"
-                 style="display:none;margin-top:10px;">
+        </form>
+
+        <div id="alertBox"></div>
+
+    </div>
+
+    <!-- SIGN UP -->
+    <div class="sub-cont">
+
+        <div class="img">
+
+            <div class="img__text m--up">
+                <h2>New here?</h2>
+                <p>Sign up and discover</p>
             </div>
 
-        </form>
+            <div class="img__text m--in">
+                <h2>Already have account?</h2>
+                <p>Sign in here</p>
+            </div>
+
+            <div class="img__btn">
+                <span class="m--up">Sign Up</span>
+                <span class="m--in">Sign In</span>
+            </div>
+
+        </div>
+
+        <div class="form sign-up">
+
+            <h2>Create Account</h2>
+
+            <form id="registerForm">
+
+                <label>
+                    <span>Username</span>
+                    <input type="text"
+                           id="regUsername"
+                           required>
+                </label>
+
+                <label>
+                    <span>Email</span>
+                    <input type="email"
+                           id="regEmail"
+                           required>
+                </label>
+
+                <label>
+                    <span>Password</span>
+                    <input type="password"
+                           id="regPassword"
+                           required>
+                </label>
+
+                <button type="submit" class="submit">
+                    Sign Up
+                </button>
+
+            </form>
+
+            <div id="registerAlert"></div>
+
+        </div>
+
     </div>
 
 </div>
+
+<script>
+
+document.querySelector('.img__btn')
+.addEventListener('click', function () {
+
+    document.querySelector('.cont')
+    .classList.toggle('s--signup');
+
+});
+
+</script>
 
 <script src="login.js"></script>
 <script src="register.js"></script>
