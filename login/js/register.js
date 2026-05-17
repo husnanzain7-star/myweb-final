@@ -1,24 +1,59 @@
-document.getElementById("registerForm").addEventListener("submit", async function(e) {
+document.getElementById("registerForm")
+.addEventListener("submit", async function(e){
+
     e.preventDefault();
 
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+    const nama =
+        document.getElementById("regNama").value.trim();
 
-    const res = await fetch("https://herisusanta.my.id/javalogin/api/auth.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `action=register&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
-    });
+    const username =
+        document.getElementById("regUsername").value.trim();
 
-    const data = await res.json();
+    const password =
+        document.getElementById("regPassword").value.trim();
 
-    if (data.status === "success") {
-        document.getElementById("message").innerText = "Registrasi berhasil, silakan login";
-        window.location.href = "index.html";
-    } else {
-        document.getElementById("message").innerText = data.message || "Gagal registrasi";
+    try {
+
+        const response = await fetch(
+            "https://herisusanta.my.id/javalogin/api/auth.php",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                    "application/x-www-form-urlencoded"
+                },
+
+                body:
+                `action=register&nama=${encodeURIComponent(nama)}&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+            }
+        );
+
+        const result = await response.json();
+
+        const alertBox =
+            document.getElementById("registerAlert");
+
+        alertBox.style.display = "block";
+
+        if(result.success){
+
+            alertBox.style.color = "lime";
+            alertBox.innerText =
+                "Register berhasil";
+
+        } else {
+
+            alertBox.style.color = "red";
+            alertBox.innerText =
+                result.message || "Register gagal";
+        }
+
+    } catch(error){
+
+        console.error(error);
+
+        alert("Terjadi kesalahan");
     }
+
 });
