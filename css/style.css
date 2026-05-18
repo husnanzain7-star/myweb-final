@@ -508,13 +508,12 @@ footer a:hover {
   background-color: #ffffff;
   color: #111112;
 }
-.maps { 
-	width="400" 
-	height="250" 
-	style="border:0;" 
-	allowfullscreen="" 
-	loading="lazy" 
-	referrerpolicy="no-referrer-when-downgrade"
+.maps {
+  width: 400px;
+  height: 250px;
+  border: 0;
+  display: block;
+  margin: 20px auto;
 }
 
 /* Mobile Responsive */
