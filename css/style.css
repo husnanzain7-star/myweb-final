@@ -515,7 +515,7 @@ footer a:hover {
   display: block;
   margin-left: auto;
   margin-right: 30px;
-  top: -50px;
+  transform: translateY(-50px);
 }
 
 /* Mobile Responsive */
